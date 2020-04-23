@@ -7,6 +7,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "docker": "./docker/bin/run-docker.sh",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "build:grpc": "npm rebuild grpc",

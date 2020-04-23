@@ -7,12 +7,16 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - .:/app
+    expose:
+      - 5000
     ports:
-      - 9000:3000
+      - 9001:3000
     environment:
       MONGODB_URI: mongodb://root:root@db_agenda/agenda
     depends_on:
       - db_agenda
+    networks:
+      - agenda
   db_agenda:
     build:
       context: .
@@ -24,6 +28,13 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: agenda
+    networks:
+      - agenda
 
 volumes:
   mongodb_agenda:
+
+networks:
+  agenda:
+    external:
+      name: agenda
