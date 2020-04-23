@@ -9,10 +9,12 @@ async function bootstrap() {
     transport: Transport.GRPC,
     options: {
       package: 'agenda',
+      url: '0.0.0.0:5000',
       protoPath: join(__dirname, '../node_modules/descricao-servicos/proto/agenda.proto'),
     }
   });
   await app.startAllMicroservicesAsync();
   await app.listen(process.env.PORT || 3000);
 }
+
 bootstrap();
