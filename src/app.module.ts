@@ -14,20 +14,17 @@ import * as MongoosePaginate from 'mongoose-paginate';
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (config: ConfigService) => {
-        console.log(config.get('MONGODB_URI'))
-        return {
-          uri: config.get('MONGODB_URI'),
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-          connectionFactory(connection) {
-            connection.plugin(MongooseAutopopulate);
-            connection.plugin(MongoosePaginate);
-            return connection;
-          }
-        }
-      },
-      inject: [ConfigService]
+      useFactory: (config: ConfigService) => ({
+        uri: config.get('MONGODB_URI'),
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        connectionFactory(connection) {
+          connection.plugin(MongooseAutopopulate);
+          connection.plugin(MongoosePaginate);
+          return connection;
+        },
+      }),
+      inject: [ConfigService],
     }),
     ConsultasModule
   ],
