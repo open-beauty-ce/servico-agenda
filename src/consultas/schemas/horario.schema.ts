@@ -43,8 +43,21 @@ HorarioSchema.virtual('procedimento', {
   localField: 'procedimentoId',
   foreignField: '_id',
   justOne: true,
-  autopopulate: true
+  autopopulate: true,
 });
+
+HorarioSchema.methods.toGRPCMessage = function(): Agenda.Horario {
+  return {
+    id: this._id.toHexString(),
+    procedimentoId: this.procedimentoId.toHexString(),
+    encontros: this.encontros.map(encontro => ({
+      id: encontro._id.toHexString(),
+      data: encontro.comecaEm,
+      realizado: encontro.realizado,
+    })),
+    doutor: this.doutor,
+  };
+};
 
 HorarioSchema.statics.marcarHorario = async function(dados: Agenda.Input.MarcarHorario, procedimento: Procedimento): Promise<Horario> {
   const periodosAtendimentos = dados.datas.map(data => ({

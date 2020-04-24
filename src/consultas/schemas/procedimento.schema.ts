@@ -1,13 +1,15 @@
 import { Schema } from 'mongoose';
+import { Procedimento } from '../entities/procedimento.entity';
+import { Agenda } from 'descricao-servicos';
 
-export const ProcedimentoSchema = new Schema({
+export const ProcedimentoSchema = new Schema<Procedimento>({
   nome: {
     type: String,
-    required: [true, 'É becessparui informar o nome do procedimento']
+    required: [true, 'É becessparui informar o nome do procedimento'],
   },
   duracao: {
     type: Number,
-    required: [true, 'É necessário informar a duração do procedimentos']
+    required: [true, 'É necessário informar a duração do procedimentos'],
   },
   doutor: {
     id: {
@@ -20,3 +22,12 @@ export const ProcedimentoSchema = new Schema({
     }
   }
 });
+
+ProcedimentoSchema.methods.toGRPCMessage = function(): Agenda.Procedimento {
+  return {
+    id: this._id.toHexString(),
+    nome: this.nome,
+    duracao: this.duracao,
+    doutor: this.doutor,
+  };
+};
