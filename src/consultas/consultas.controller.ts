@@ -29,10 +29,10 @@ export class ConsultasController {
 
   @GrpcMethod('HorarioController', 'listarHorarios')
   async listarHorarios(opcoes: Agenda.Input.FiltroHorarios): Promise<Agenda.Horarios> {
-    const horarios = await this.horarioModel.paginate(opcoes.filtro, {
-      limit: opcoes.paginacao.limite,
-      page: opcoes.paginacao.pagina,
-      sort: opcoes.ordenacao,
+    const horarios = await this.horarioModel.paginate(opcoes?.filtro, {
+      limit: opcoes?.paginacao?.limite || 10,
+      page: opcoes?.paginacao?.pagina || 1,
+      sort: opcoes?.ordenacao,
     });
 
     return {
@@ -76,10 +76,10 @@ export class ConsultasController {
 
   @GrpcMethod('ProcedimentoController', 'listarProcedimentos')
   async listarProcedimentos(opcoes: Agenda.Input.FiltroProcedimentos): Promise<Agenda.Procedimentos> {
-    const procedimentos = await this.procedimentoModel.paginate(opcoes.filtro, {
-      limit: opcoes.paginacao.limite,
-      page: opcoes.paginacao.pagina,
-      sort: opcoes.ordenacao,
+    const procedimentos = await this.procedimentoModel.paginate(opcoes?.filtro, {
+      limit: opcoes?.paginacao?.limite || 10,
+      page: opcoes?.paginacao?.pagina || 1,
+      sort: opcoes?.ordenacao,
     });
 
     return {
