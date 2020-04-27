@@ -869,9 +869,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "13.13.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.2.tgz#160d82623610db590a64e8ca81784e11117e5a54"
-  integrity sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
+  version "13.13.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.4.tgz#1581d6c16e3d4803eb079c87d4ac893ee7501c2c"
+  integrity sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
 
 "@types/node@^10.1.0":
   version "10.17.19"
@@ -2491,8 +2491,8 @@ des.js@^1.0.0:
     minimalistic-assert "^1.0.0"
 
 "descricao-servicos@git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git":
-  version "1.0.6"
-  resolved "git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git#91617f9b0974c5ce166d538fc05fc5f6ee466425"
+  version "1.0.7"
+  resolved "git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git#a0c9830901f95800cb9c890d3666abc13fa284bb"
   dependencies:
     "@types/bson" "^4.0.2"
 
