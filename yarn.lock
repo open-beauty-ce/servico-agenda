@@ -2491,8 +2491,8 @@ des.js@^1.0.0:
     minimalistic-assert "^1.0.0"
 
 "descricao-servicos@git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git":
-  version "1.0.7"
-  resolved "git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git#a0c9830901f95800cb9c890d3666abc13fa284bb"
+  version "1.0.9"
+  resolved "git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git#a08b1fb7be23e073521f478eae29913e1be1d5d1"
   dependencies:
     "@types/bson" "^4.0.2"
 

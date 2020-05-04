@@ -1,8 +1,7 @@
 import { ObjectID } from 'mongodb';
 import { Doutor } from './doutor.entity';
 import { Document } from 'mongoose';
-import { Agenda } from 'descricao-servicos';
-import { GrpcEntity } from './grpc.entity';
+import { Agenda, GrpcEntity } from 'descricao-servicos';
 
 export interface Procedimento extends Document, GrpcEntity<Agenda.Procedimento> {
   _id: ObjectID;
