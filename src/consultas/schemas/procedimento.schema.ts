@@ -5,7 +5,7 @@ import { Agenda } from 'descricao-servicos';
 export const ProcedimentoSchema = new Schema<Procedimento>({
   nome: {
     type: String,
-    required: [true, 'É becessparui informar o nome do procedimento'],
+    required: [true, 'É necessário informar o nome do procedimento'],
   },
   duracao: {
     type: Number,
