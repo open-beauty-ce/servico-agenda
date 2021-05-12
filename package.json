@@ -36,7 +36,7 @@
     "@types/mongoose-paginate": "^5.0.8",
     "cross-env": "^7.0.2",
     "descricao-servicos": "git+ssh://git@github.com:open-beauty-ce/definicao-servicos.git",
-    "grpc": "^1.24.2",
+    "grpc": "^1.24.9",
     "moment": "^2.24.0",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.9",
